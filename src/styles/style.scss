@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    // outline: 1px solid red;
+}
+
+.App {
+
+    header {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        min-height: 100px;
+    }
+
+    .posts-list {
+        list-style-type: none;
+        padding: 20px;
+
+        li {
+            padding: 10px;
+            background-color: rgb(198, 219, 226);
+        }
+
+        li:nth-of-type(2n) {
+            background-color: white;
+        }
+    }
+
+    .Post {
+        padding: 20px;
+
+        button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .Comments {
+            margin-top: 40px;
+
+            ul {
+                list-style-type: none;
+
+                li {
+                    padding: 10px;
+                    background-color: rgb(198, 219, 226);
+                    font-size: 10px;
+                }
+        
+                li:nth-of-type(2n) {
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
