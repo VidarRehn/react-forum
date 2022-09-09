@@ -27,6 +27,10 @@
   background-color: #c6dbe2;
 }
 
+.App .posts-list li a {
+  text-decoration: none;
+}
+
 .App .posts-list li:nth-of-type(2n) {
   background-color: white;
 }
@@ -45,6 +49,10 @@
   margin-top: 40px;
 }
 
+.App .Post .Comments h2 {
+  margin: 10px;
+}
+
 .App .Post .Comments ul {
   list-style-type: none;
 }
@@ -52,7 +60,7 @@
 .App .Post .Comments ul li {
   padding: 10px;
   background-color: #c6dbe2;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .App .Post .Comments ul li:nth-of-type(2n) {
