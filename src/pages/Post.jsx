@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router'
+import { useLocation, useParams } from 'react-router'
 import { useNavigate } from 'react-router-dom'
 
 import Header from '../components/Header'
@@ -11,6 +11,7 @@ const Post = () => {
 
     const params = useParams()
     const navigate = useNavigate()
+    const location = useLocation()
     
     const getSinglePost = async () => {
         let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
@@ -25,7 +26,12 @@ const Post = () => {
     }
 
     useEffect(() => {
-        getSinglePost().then(data => setPost(data))
+        if (location.state) {
+            console.log(location.state)
+            setPost(location.state)
+        } else {
+            getSinglePost().then(data => setPost(data))
+        }
         getComments().then(data => setComments(data))
     }, [])
 
@@ -34,7 +40,7 @@ const Post = () => {
             {post && comments ? <div>
                 <Header text={post.title}/>
                 <div className='Post'>
-                    <button onClick={() => navigate(-1)}>Go back</button>
+                    <button onClick={() => navigate('/')}>Go back</button>
                     <p>{post.body}</p>
                     <div className='Comments'>
                         <h2>Comments</h2>
