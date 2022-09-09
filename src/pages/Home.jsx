@@ -19,10 +19,8 @@ const Home = () => {
 
     return (
         <div className="Home">
-            <Header text='Home' />
-            {posts ? <ul className="posts-list">{posts.map((post, index) => (<PostComponent key={index} post={post} />)) }</ul>
-            
-            : <p>Loading...</p>}
+            <Header text='React Forum' />
+            {posts ? <ul className="posts-list">{posts.map((post, index) => (<PostComponent key={index} post={post} />)) }</ul> : <p>Loading...</p>}
         </div>
     )
 }

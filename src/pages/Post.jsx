@@ -27,7 +27,6 @@ const Post = () => {
 
     useEffect(() => {
         if (location.state) {
-            console.log(location.state)
             setPost(location.state)
         } else {
             getSinglePost().then(data => setPost(data))
@@ -57,8 +56,7 @@ const Post = () => {
                         </ul>
                     </div>
                 </div>
-            </div>
-            : <p>Loading...</p>}
+            </div> : <p>Loading...</p>}
         </>
     )
 }
